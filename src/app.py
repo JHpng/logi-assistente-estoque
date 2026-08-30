@@ -4,9 +4,9 @@ from google import genai
 from google.genai import types
 import os
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
-BASE = Path(__file__).parent / "base.md"
+BASE = Path(__file__).resolve().parent.parent / "data" / "base.md"
 if not BASE.exists():
     raise SystemExit("ERRO: base.md nao encontrado.")
 
